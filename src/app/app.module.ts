@@ -25,8 +25,8 @@ import { EditAlbumComponent } from './profil/edit-album/edit-album.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditProfilComponent } from './profil/edit-profil/edit-profil.component';
 import { ProfilCardComponent } from './profil/profil-card/profil-card.component';
-import {MatStepperModule} from "@angular/material/stepper";
-import {ReactiveFormsModule} from "@angular/forms";
+import {MatStepperModule} from '@angular/material/stepper';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [

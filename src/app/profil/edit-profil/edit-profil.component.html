@@ -8,12 +8,12 @@
       Basic Infos
     </div>
          <div class="card-body">
-      <form class="form-card">
+      <form class="form-card" [formGroup]="firstprofileForm">
 
         <mat-form-field class="form-item-full-width">
-          <input matInput placeholder="First Name" value="Salma">
+          <input matInput placeholder="First Name" value="Salma" formControlName="firstname" >
         </mat-form-field><br />
-        <mat-form-field class="form-item-full-width">
+        <mat-form-field class="form-item-full-width"  formControlName="lastname">
           <input matInput placeholder="Last Name" value="Rais">
         </mat-form-field><br />
         <mat-form-field class="form-item-full-width">
@@ -34,20 +34,20 @@
           Public Infos
         </div>
         <div class="card-body">
-          <form class="form-card">
+          <form class="form-card" [formGroup]="secondprofileform">
 
 
             <mat-form-field class="form-item-full-width">
-              <input matInput placeholder="Phone Number" value="45845668">
+              <input matInput placeholder="Phone Number" value="45845668" formControlName="phone">
             </mat-form-field><br />
 
 
             <mat-form-field class="form-item-full-width">
-              <textarea matInput placeholder="Bio" value="Bio description"></textarea>
+              <textarea matInput placeholder="Bio" value="Bio description" formControlName="bio"></textarea>
             </mat-form-field>
 
             <mat-form-field class="form-item-full-width">
-              <textarea matInput placeholder="Fields of work"></textarea>
+              <textarea matInput placeholder="Fields of work" formControlName="fields "></textarea>
             </mat-form-field>
             <button mat-flat-button color="accent" type="submit">Save Changes</button>
           </form>

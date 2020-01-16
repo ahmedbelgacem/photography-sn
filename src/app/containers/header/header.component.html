@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="d-flex flex-grow-1">
     <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
-    <a class="navbar-brand shooters-logo" href="#">
+    <a class="navbar-brand shooters-logo"  [routerLink]="['/']" routerLinkActive="active">
       SHOOTERS
     </a>
     <div class="w-100 text-right">
@@ -16,10 +16,10 @@
         <a href="#" class="nav-link">Browse</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Sign in</a>
+        <a class="nav-link" [routerLink]="['/auth/sign-up']" routerLinkActive="active">Sign up</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Login in</a>
+        <a href="#" class="nav-link" [routerLink]="['/auth/sign-in']" routerLinkActive="active">Login in</a>
       </li>
       <li class="nav-item">
         <div class="nav-link"><i class="fa fa-search" (click)="toggleSearch()"></i>

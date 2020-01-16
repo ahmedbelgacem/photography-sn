@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ActivatedRoute} from '@angular/router';
+import {ProfilInfos} from './profil-infos';
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',
@@ -8,11 +9,24 @@ import { Component, OnInit } from '@angular/core';
 export class ProfilComponent implements OnInit {
 
 
-  private  link_picture = 'https://cache.magazine-avantages.fr/data/photo/w1000_c18/4j/hommebrunyeuxverts.jpg';
+  private id;
+  private profileData = new ProfilInfos();
+  private pictureIds = [ 1 , 2, 3, 4, 5, 6, 7, 8, 9 ];
 
-  constructor() { }
+
+
+  constructor(private router: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    // Mock Example
+    this.profileData.mockFill();
+
+  console.log(this.profileData);
+    // profileData = ProfileService.getProfilDataById(this.id);
+
+    this.id = +this.router.snapshot.paramMap.get('id');
+
   }
 
 }
