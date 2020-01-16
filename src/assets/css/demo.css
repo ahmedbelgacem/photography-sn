@@ -523,7 +523,7 @@
   transition: all 0.3s;
 }
 
-.hero-link h2 {
+.hero-link .hero-link-inside {
   color: #fff;
   line-height: 1.5;
   position: relative;
@@ -531,6 +531,9 @@
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+
+
+
 
 .hero-social-links {
   position: absolute;

@@ -27,6 +27,8 @@ import { EditProfilComponent } from './profil/edit-profil/edit-profil.component'
 import { ProfilCardComponent } from './profil/profil-card/profil-card.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {ReactiveFormsModule} from '@angular/forms';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatInputModule,
     MatButtonModule,
     MatStepperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
