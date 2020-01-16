@@ -17,8 +17,5 @@ export class ProfilInfos {
       'Risus commodo viverra maecenas accumsan lacus vel facilisis.';
     this.fields = 'Wedding Photography, Portrait Photography, Model Photography, Events Photography';
     this.profilePicPath = 'https://cache.magazine-avantages.fr/data/photo/w1000_c18/4j/hommebrunyeuxverts.jpg';
-    this.portfolio =
-    ];
-
   }
 }
