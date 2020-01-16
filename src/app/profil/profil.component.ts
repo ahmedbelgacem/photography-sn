@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
+
+  private  link_picture = 'https://cache.magazine-avantages.fr/data/photo/w1000_c18/4j/hommebrunyeuxverts.jpg';
+
   constructor() { }
 
   ngOnInit() {

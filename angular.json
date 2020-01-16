@@ -28,9 +28,18 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/sass/now-ui-kit.scss",
+              "src/assets/css/demo.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/rellax/rellax.min.js",
+              "src/assets/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
