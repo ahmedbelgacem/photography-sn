@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -60,7 +61,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     MatButtonModule,
     MatStepperModule,
     ReactiveFormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

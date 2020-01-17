@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Picture} from './picture';
-import * as data from '../../assets/json/data.json';
 
 
 @Component({
@@ -66,15 +65,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  jsonToArray(): any {
-    // tslint:disable-next-line:forin
-    for (const i in data.listOfPictures) {
-      this.array.push({
-        url: i,
-        info: data.listOfPictures[i]
-      });
-    }
-  }
+
 
   toggleModal() {
     this.modalOpen = !this.modalOpen;
