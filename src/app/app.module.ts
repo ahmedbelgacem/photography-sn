@@ -28,6 +28,7 @@ import { ProfilCardComponent } from './profil/profil-card/profil-card.component'
 import {MatStepperModule} from '@angular/material/stepper';
 import {ReactiveFormsModule} from '@angular/forms';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     AboutComponent,
     EditAlbumComponent,
     EditProfilComponent,
-    ProfilCardComponent
+    ProfilCardComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

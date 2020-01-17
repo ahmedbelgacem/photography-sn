@@ -8,7 +8,8 @@ import { ProfilComponent } from 'src/app/profil/profil.component';
 import { MainComponent } from 'src/app/containers/main/main.component';
 import { HomeComponent } from 'src/app/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
-import {EditProfilComponent} from "./profil/edit-profil/edit-profil.component";
+import {EditProfilComponent} from './profil/edit-profil/edit-profil.component';
+import {PortfolioComponent} from './portfolio/portfolio.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'profil/edit-album', component: EditAlbumComponent },
       { path: 'profil/add-album', component: EditAlbumComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'portfolio', component: PortfolioComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
     ]
   },
