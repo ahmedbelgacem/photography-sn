@@ -1,5 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import {HttpClientModule} from '@angular/common/http';
+
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +23,14 @@ import { HeaderComponent } from './containers/header/header.component';
 import { FooterComponent } from './containers/footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { EditAlbumComponent } from './profil/edit-album/edit-album.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditProfilComponent } from './profil/edit-profil/edit-profil.component';
+import { ProfilCardComponent } from './profil/profil-card/profil-card.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {ReactiveFormsModule} from '@angular/forms';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+
 
 @NgModule({
   declarations: [
@@ -32,11 +47,22 @@ import { EditAlbumComponent } from './profil/edit-album/edit-album.component';
     HeaderComponent,
     FooterComponent,
     AboutComponent,
-    EditAlbumComponent
+    EditAlbumComponent,
+    EditProfilComponent,
+    ProfilCardComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    InfiniteScrollModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

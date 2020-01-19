@@ -1,1 +1,42 @@
-<p>profil works!</p>
+<div class="container-fluid">
+  <section class="about-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 p-0">
+          <div class="about-bg" [ngStyle]="{'background-image':' url(' + this.profileData.httpPath+ ')','background-size':'cover'}" >
+          </div>
+        </div>
+        <div class="col-lg-6 p-0">
+          <div class="about-text">
+            <h3>About</h3>
+            <h2>{{this.profileData.name}}</h2>
+            <p>{{this.profileData.description}}</p>
+            <a href="#" class="site-btn">contact me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About section end  -->
+
+  <!-- Portfolio section -->
+  <section class="portfolio-2-section">
+    <div class="portfolio-warp">
+      <div class="row portfolio-gallery m-0">
+        <div class="mix col-lg-4 col-sm-6 p-0 nature" *ngFor="let e of photos">
+          <div class="portfolio-box">
+            <img class="portfolio-item set-bg" src="{{e.httpPath}}">
+            <h6>{{e.title}}</h6>
+            <p>2019</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+    </div>
+  </section>
+  <!-- Portfolio section end  -->
+
+  <!-- Portfolio section end -->
+</div>

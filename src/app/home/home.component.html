@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="search-results row"
+     infinite-scroll
+     [infiniteScrollDistance]="scrollDistance"
+     [infiniteScrollUpDistance]="scrollUpDistance"
+     [infiniteScrollThrottle]="throttle"
+     (scrolled)="onScrollDown($event)"
+     (scrolledUp)="onUp($event)">
+  <div class="col-sm-3 hero-item portfolio-item item set-bg" *ngFor = 'let picture of array'
+       [ngStyle]="{'background-image':' url('+ picture.httpPath +')'}">
+    <a [routerLink]="['/profil/', picture.author]" class="hero-link">
+      <div class="hero-link-inside">
+        <h2>Take a look at my Portfolio</h2>
+        <p>{{picture.author}}</p>
+      </div>
+
+    </a>
+  </div>
+</div>
