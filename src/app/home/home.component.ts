@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Picture} from './picture';
-import { HomeService } from '../home.service';
+import {PicturesService} from '../services/pictures/pictures.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  constructor(private homeManager: HomeService) {
+  constructor(private picturesManager: PicturesService) {
     this.appendItems(0, this.sum);
   }
 
@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-      this.homeManager.getPhotos().subscribe((data: Picture[]) => {
+      this.picturesManager.getPhotos().subscribe((data: Picture[]) => {
         console.log(data);
         this.array = data;
       });

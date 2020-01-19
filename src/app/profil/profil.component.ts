@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProfilInfos } from './profil-infos';
-import { ProfilService } from '../profil.service';
 import { HttpClient } from '@angular/common/http';
+import {ProfilesService} from '../services/profiles/profiles.service';
+
 @Component({
   selector: 'app-profil',
   templateUrl: './profil.component.html',
   styleUrls: ['./profil.component.scss']
 })
+
 export class ProfilComponent implements OnInit {
   private name = 'test';
   private profileData; // = new ProfilInfos();
@@ -16,17 +18,13 @@ export class ProfilComponent implements OnInit {
 
   constructor(
     private router: ActivatedRoute,
-    private profilManager: ProfilService,
+    private profilManager: ProfilesService,
     private http: HttpClient
   ) {}
 
   ngOnInit() {
     this.name = this.router.snapshot.paramMap.get('name');
-<<<<<<< HEAD
-
-=======
     console.log(name);
->>>>>>> b32a2fc27775a02df14a534d6ce5160effce7821
     // this.profileData.mockFill();
     /*  this.profilManager.getProfil(this.name).subscribe(
       data => {
