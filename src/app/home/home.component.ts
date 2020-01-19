@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Picture} from './picture';
-
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  constructor() {
+  constructor(private homeManager: HomeService) {
     this.appendItems(0, this.sum);
   }
 
@@ -72,8 +72,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.array = Picture.mockFillArray();
-      console.log(this.array[0]);
+
+      this.homeManager.getPhotos().subscribe((data: Picture[]) => {
+        console.log(data);
+        this.array = data;
+      });
   }
 
 }

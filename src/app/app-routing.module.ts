@@ -17,7 +17,7 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'profil/:id', component: ProfilComponent },
+      { path: 'profil/:name', component: ProfilComponent },
       { path: 'profil/edit-profil', component: EditProfilComponent},
       { path: 'profil/edit-album', component: EditAlbumComponent },
       { path: 'profil/add-album', component: EditAlbumComponent },

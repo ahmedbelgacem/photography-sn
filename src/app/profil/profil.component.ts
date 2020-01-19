@@ -22,7 +22,11 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit() {
     this.name = this.router.snapshot.paramMap.get('name');
+<<<<<<< HEAD
 
+=======
+    console.log(name);
+>>>>>>> b32a2fc27775a02df14a534d6ce5160effce7821
     // this.profileData.mockFill();
     /*  this.profilManager.getProfil(this.name).subscribe(
       data => {
