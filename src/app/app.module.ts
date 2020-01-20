@@ -30,7 +30,11 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {ReactiveFormsModule} from '@angular/forms';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-
+import {MatSelectModule} from "@angular/material/select";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatIconModule} from "@angular/material/icon";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -62,7 +66,12 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     MatStepperModule,
     ReactiveFormsModule,
     InfiniteScrollModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatIconModule,
+    MatNativeDateModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

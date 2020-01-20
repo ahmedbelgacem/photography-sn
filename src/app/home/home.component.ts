@@ -60,6 +60,7 @@ export class HomeComponent implements OnInit {
 
     this.direction = 'up';
   }
+
   generateWord() {
     return 'a word';
   }
@@ -73,10 +74,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.array = Picture.mockFillArray();
+    /*
       this.picturesManager.getPhotos().subscribe((data: Picture[]) => {
         console.log(data);
         this.array = data;
       });
+
+     */
   }
 
 }
