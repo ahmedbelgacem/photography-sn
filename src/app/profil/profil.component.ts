@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfilComponent implements OnInit {
   private name = 'test';
-  private profileData; // = new ProfilInfos();
+  private profileData=""; // = new ProfilInfos();
   // private profileData;
   private photos;
 
@@ -22,7 +22,6 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit() {
     this.name = this.router.snapshot.paramMap.get('name');
-    console.log(name);
     // this.profileData.mockFill();
     /*  this.profilManager.getProfil(this.name).subscribe(
       data => {
@@ -33,11 +32,11 @@ export class ProfilComponent implements OnInit {
     // this.http.get("http://127.0.0.1:8080/profil/all").subscribe(data => {console.log(data)});
 
     this.profilManager.getProfil(this.name).subscribe(data => {
-      console.log(data);
+      //console.log(data);
       this.profileData = data[0];
     });
     this.profilManager.getPhotos(this.name).subscribe(data => {
-      console.log(data);
+    //  console.log(data);
       this.photos = data;
     });
   }

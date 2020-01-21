@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   throttle = 300;
   scrollDistance = 1;
   scrollUpDistance = 2;
-  direction = ''; 
+  direction = '';
   modalOpen = false;
 
 
@@ -42,8 +42,6 @@ export class HomeComponent implements OnInit {
   }
 
   onScrollDown(ev) {
-    console.log('scrolled down!!', ev);
-
     // add another 20 items
     const start = this.sum;
     this.sum += 20;
@@ -53,7 +51,6 @@ export class HomeComponent implements OnInit {
   }
 
   onUp(ev) {
-    console.log('scrolled up!', ev);
     const start = this.sum;
     this.sum += 20;
     this.prependItems(start, this.sum);
@@ -72,10 +69,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      /*this.array = Picture.mockFillArray();
-      console.log(this.array[0]);*/
+
       this.homeManager.getPhotos().subscribe((data: Picture[]) => {
-        console.log(data);
+
         this.array = data;
       });
   }

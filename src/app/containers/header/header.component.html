@@ -26,7 +26,8 @@
 
       <ng-container *ngIf="isLoggedIn">
           <li class="nav-link">
-              <a href="#" class="nav-link" [routerLink]="['/profil/ahmed belgacem']" routerLinkActive="active">{{username}}</a>
+              <a href="#" class="nav-link" [routerLink]="['/profil/'+this.username]" routerLinkActive="active">{{username}}</a>
+            
              </li>
           <li class="nav-item">
             <a href="#" class="nav-link" [routerLink]="['/portfolio']" routerLinkActive="active">Add Pictures</a>

@@ -30,7 +30,6 @@ export class AuthentificationService {
           fsPath: "/var/www/html/uploads-photographysn/avatar.jpg"
         }
       };
-      console.dir(body);
       this.http.post("http://localhost:8080/auth/signup", body).subscribe(
         response => {
           resolve(response["status"]);
@@ -47,10 +46,9 @@ export class AuthentificationService {
         email: email,
         password: Md5.hashStr(password)
       };
-      console.dir(body);
+
       this.http.post("http://localhost:8080/auth/signin", body).subscribe(
         response => {
-          console.log(response);
           localStorage.setItem("user", JSON.stringify(response));
           this.currentUser = response;
           this.loggingEvent.next(true);

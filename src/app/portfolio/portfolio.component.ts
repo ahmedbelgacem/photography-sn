@@ -9,7 +9,7 @@ import { FormControl, FormGroup } from "@angular/forms";
 import { Subscription } from "rxjs/Subscription";
 import { catchError, last, map, tap } from "rxjs/operators";
 import { of } from "rxjs";
-import {Router} from '@angular/router'
+import { Router } from "@angular/router";
 @Component({
   selector: "app-portfolio",
   templateUrl: "./portfolio.component.html",
@@ -17,11 +17,10 @@ import {Router} from '@angular/router'
 })
 export class PortfolioComponent implements OnInit {
   myDatepicker: any;
+  profileForm = new FormGroup({
+    title: new FormControl("")
+  });
 
- title="test";
- profileForm = new FormGroup({
-      title: new FormControl('')
-    });   
   @Input() param = "img";
   /** Target URL for file uploading. */
   @Input() target = "localhost:8080/photo/upload";
@@ -30,12 +29,13 @@ export class PortfolioComponent implements OnInit {
   @Input() accept = "image/*";
   /** Allow you to add handler after its completion. Bubble up response text from remote. */
   @Output() complete = new EventEmitter<string>();
-  fsPath = "";
-  httpPath ="" ;
+
   username = JSON.parse(localStorage.getItem("user")).profil.name;
   private files: Array<FileUploadModel> = [];
 
-  constructor(private http: HttpClient,private router:Router) {}
+  constructor(private http: HttpClient, private router: Router) {}
+  fsPath = "";
+  httpPath = "";
 
   ngOnInit() {}
 
@@ -78,12 +78,10 @@ export class PortfolioComponent implements OnInit {
       reportProgress: true
     });*/
 
-    this.http.post("http://localhost:8080/photo/upload",fd).subscribe(
-      (response)=> {
+    this.http.post("http://localhost:8080/photo/upload", fd).subscribe(
+      (response) => {
         this.fsPath = response.fsPath;
         this.httpPath = response.httpPath;
-        console.log(this.fsPath);
-        console.log(this.httpPath);
 
       },
       err => {
@@ -119,20 +117,25 @@ export class PortfolioComponent implements OnInit {
     );*/
   }
   private sendFile() {
-    this.http.post("http://localhost:8080/photo/send",
-    //console.log(
-    {
-      title: this.title,
-      author: this.username,
-      fsPath: this.fsPath,
-      httpPath: this.httpPath
-    }).subscribe(response => {
-        this.router.navigate(["/profil",this.username]);
+    this.http
+      .post(
+        "http://localhost:8080/photo/send",
+        {
+          title: this.profileForm.title,
+          author: this.username,
+          fsPath: this.fsPath,
+          httpPath: this.httpPath
+        }
+      )
+      .subscribe(
+        response => {
+          this.router.navigate(["/profil", this.username]);
         },
         err => {
           console.log(err);
         }
-      )}
+      );
+  }
   private uploadFiles() {
     const fileUpload = document.getElementById(
       "fileUpload"
