@@ -15,13 +15,24 @@
       <li class="nav-item">
         <a href="#" class="nav-link">Browse</a>
       </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link" [routerLink]="['/portfolio']" routerLinkActive="active">Add Pictures</a>
-      </li>
-      <li class="nav-item">
-        <div class="nav-link"><i class="fa fa-search" (click)="toggleSearch()"></i>
-        </div>
-      </li>
+      <ng-container *ngIf="!isLoggedIn">
+          <li class="nav-item">
+            <a href="#" class="nav-link" [routerLink]="['/auth/sign-in']" routerLinkActive="active">Sign in</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" [routerLink]="['/auth/sign-up']" routerLinkActive="active">Sign up</a>
+          </li>
+      </ng-container>
+
+      <ng-container *ngIf="isLoggedIn">
+          <li class="nav-link"> {{username}}</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" [routerLink]="['/portfolio']" routerLinkActive="active">Add Pictures</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" (click)="disconnect()" >Disconnect</a>
+          </li>
+      </ng-container>
     </ul>
   </div>
 </nav>

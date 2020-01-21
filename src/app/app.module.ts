@@ -30,7 +30,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {ReactiveFormsModule} from '@angular/forms';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-
+import { FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -50,11 +50,13 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     EditAlbumComponent,
     EditProfilComponent,
     ProfilCardComponent,
-    PortfolioComponent
+    PortfolioComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
     MatInputModule,

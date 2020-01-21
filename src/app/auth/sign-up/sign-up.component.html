@@ -12,7 +12,7 @@
               <form [formGroup]="firstFormGroup">
                 <ng-template matStepLabel>Fill out your name</ng-template>
                 <mat-form-field>
-                  <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                  <input matInput placeholder="First name,Last name" formControlName="firstCtrl" [(ngModel)]="user.name" required>
                 </mat-form-field>
                 <div>
                   <button mat-button matStepperNext>Next</button>
@@ -21,9 +21,21 @@
             </mat-step>
             <mat-step [stepControl]="secondFormGroup">
               <form [formGroup]="secondFormGroup">
-                <ng-template matStepLabel>Fill out your address</ng-template>
+                <ng-template matStepLabel>Fill out your email address</ng-template>
                 <mat-form-field>
-                  <input matInput placeholder="Address" formControlName="secondCtrl" required>
+                  <input matInput placeholder="Address" formControlName="secondCtrl" [(ngModel)]="user.email" required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+              <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Password</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Password" type="password" formControlName="thirdCtrl" [(ngModel)]="user.password" required>
                 </mat-form-field>
                 <div>
                   <button mat-button matStepperPrevious>Back</button>
@@ -35,6 +47,7 @@
               <ng-template matStepLabel>Done</ng-template>
               You are now done.
               <div>
+                <button mat-button matStepperPrevious (click)="submit()">Submit</button>
                 <button mat-button matStepperPrevious>Back</button>
                 <button mat-button (click)="stepper.reset()">Reset</button>
               </div>
@@ -42,7 +55,8 @@
           </mat-vertical-stepper>
         </div>
         <div class="card-footer">
-          You already have an account ? Log in <a routerLink="auth/sign-in">here</a>.
+          You already have an account ? Log in <a [routerLink]="['/auth/sign-in']" routerLinkActive="active">here</a>.
+
         </div>
       </div>
     </div>
