@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   throttle = 300;
   scrollDistance = 1;
   scrollUpDistance = 2;
-  direction = '';
+  direction = ''; 
   modalOpen = false;
 
 

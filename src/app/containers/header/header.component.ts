@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit,AfterViewInit {
 
   isLoggedIn:boolean = false;
   username:string="guest";
+  link="['/profil/"+this.username+"']"
   constructor(private authService: AuthentificationService,private router:Router) {}
 
   ngOnInit() {

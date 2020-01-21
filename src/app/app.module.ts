@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+
 import {HttpClientModule} from '@angular/common/http';
 
 
@@ -26,11 +24,45 @@ import { EditAlbumComponent } from './profil/edit-album/edit-album.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditProfilComponent } from './profil/edit-profil/edit-profil.component';
 import { ProfilCardComponent } from './profil/profil-card/profil-card.component';
-import {MatStepperModule} from '@angular/material/stepper';
 import {ReactiveFormsModule} from '@angular/forms';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { FormsModule} from '@angular/forms'
+import { FormsModule} from '@angular/forms';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatBadgeModule
+} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -58,13 +90,42 @@ import { FormsModule} from '@angular/forms'
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule,
-    MatInputModule,
-    MatButtonModule,
-    MatStepperModule,
     ReactiveFormsModule,
     InfiniteScrollModule,
-    HttpClientModule
+    HttpClientModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
