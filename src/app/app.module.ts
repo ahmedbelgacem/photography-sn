@@ -62,7 +62,8 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatBadgeModule
-} from "@angular/material";
+} from '@angular/material';
+import { ShowPictureModalComponent } from './home/overview/components/show-picture-modal/show-picture-modal.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,7 @@ import {
     EditProfilComponent,
     ProfilCardComponent,
     PortfolioComponent,
-
+    ShowPictureModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -127,7 +128,7 @@ import {
     MatTooltipModule,
     MatBadgeModule
   ],
-  providers: [],
+  entryComponents: [ShowPictureModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

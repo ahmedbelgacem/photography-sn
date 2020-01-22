@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomeService {
 
   constructor(private http: HttpClient) { }
+
   getPhotos() {
     return this.http.get('http://127.0.0.1:8080/photo/all');
   }

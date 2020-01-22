@@ -1,6 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import { Picture} from './picture';
 import { HomeService } from '../home.service';
+import {AuthentificationService} from '../authentification.service';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {
+  ShowPictureModalComponent
+} from './overview/components/show-picture-modal/show-picture-modal.component';
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -9,71 +17,50 @@ import { HomeService } from '../home.service';
 })
 
 
-
 export class HomeComponent implements OnInit {
 
-  array = [];
-  sum = 100;
-  throttle = 300;
-  scrollDistance = 1;
-  scrollUpDistance = 2;
-  direction = '';
-  modalOpen = false;
+  private array = [];
+  private isLoggedIn: boolean;
+  private username: string;
+  path: any;
+  author: any;
+  name: any;
 
 
+  constructor(public dialog: MatDialog, private homeManager: HomeService, private authService: AuthentificationService) {
 
-
-  constructor(private homeManager: HomeService,) {
-    this.appendItems(0, this.sum);
   }
 
-  addItems(startIndex, endIndex, _method) {
-    for (let i = 0; i < this.sum; ++i) {
-      this.array[_method]([i, ' ', this.generateWord()].join(''));
-    }
-  }
-
-  appendItems(startIndex, endIndex) {
-    this.addItems(startIndex, endIndex, 'push');
-  }
-
-  prependItems(startIndex, endIndex) {
-    this.addItems(startIndex, endIndex, 'unshift');
-  }
-
-  onScrollDown(ev) {
-    // add another 20 items
-    const start = this.sum;
-    this.sum += 20;
-    this.appendItems(start, this.sum);
-
-    this.direction = 'down';
-  }
-
-  onUp(ev) {
-    const start = this.sum;
-    this.sum += 20;
-    this.prependItems(start, this.sum);
-
-    this.direction = 'up';
-  }
-  generateWord() {
-    return 'a word';
-  }
-
-
-
-
-  toggleModal() {
-    this.modalOpen = !this.modalOpen;
-  }
 
   ngOnInit(): void {
 
-      this.homeManager.getPhotos().subscribe((data: Picture[]) => {
-
+    // Checking if the user is logged in
+    if(this.authService.currentUser){
+      this.username = this.authService.currentUser.profil.name;
+      this.isLoggedIn = true;
+    }
+    // Getting the pictures
+    this.homeManager.getPhotos().subscribe((data: Picture[]) => {
         this.array = data;
       });
+    // Test
+    // this.array = Picture.mockFillArray();
   }
 
+
+  openDialog(picture: Picture) {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+      url: picture.httpPath,
+      author: picture.author,
+      name: picture.title
+    };
+    console.log(dialogConfig);
+    this.dialog.open(ShowPictureModalComponent, dialogConfig);
+  }
 }
+
+
+

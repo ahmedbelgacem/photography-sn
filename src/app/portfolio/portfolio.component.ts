@@ -18,7 +18,7 @@ import { Router } from "@angular/router";
 export class PortfolioComponent implements OnInit {
   myDatepicker: any;
   profileForm = new FormGroup({
-    title: new FormControl("")
+    title: new FormControl('')
   });
 
   @Input() param = "img";
@@ -119,7 +119,7 @@ export class PortfolioComponent implements OnInit {
   private sendFile() {
     this.http
       .post(
-        "http://localhost:8080/photo/send",
+        'http://localhost:8080/photo/send',
         {
           title: this.profileForm.title,
           author: this.username,

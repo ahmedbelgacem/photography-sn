@@ -6,10 +6,17 @@ body {
 
 .shooters-logo {
   text-transform: uppercase;
-  font-size: inherit;
+  font-size: xx-large;
   font-weight: bolder;
   letter-spacing: 10px;
 }
+
+@media (max-width: 491px) {
+  .shooters-logo {
+    letter-spacing: 2px;
+  }
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

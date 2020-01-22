@@ -1,18 +1,42 @@
-<div class="search-results row"
-     infinite-scroll
-     [infiniteScrollDistance]="scrollDistance"
-     [infiniteScrollUpDistance]="scrollUpDistance"
-     [infiniteScrollThrottle]="throttle"
-     (scrolled)="onScrollDown($event)"
-     (scrolledUp)="onUp($event)">
-  <div class="col-sm-3 hero-item portfolio-item item set-bg" *ngFor = 'let picture of array'
-       [ngStyle]="{'background-image':' url('+ picture.httpPath +')'}">
-    <a [routerLink]="['/profil/', picture.author]" class="hero-link">
-      <div class="hero-link-inside">
-        <h2>Take a look at my Portfolio</h2>
-        <p>{{picture.author}}</p>
-      </div>
 
-    </a>
+<div class="container-fluid">
+  <div id="home-header" class="home-header position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <ng-container *ngIf="!isLoggedIn">
+        <h1 class="display-4 font-weight-normal"><span class="shooters-logo"> S H O O T E R S</span></h1>
+        <p class="lead font-weight-normal">Shooters is a photography social network for sharing photos you take with the world</p>
+        <a class="btn btn-outline-secondary" [routerLink]="['/auth/sign-up']" routerLinkActive="active" >Become a photographer</a>
+      </ng-container>
+
+      <ng-container *ngIf="isLoggedIn">
+        <h1 class="display-4 font-weight-normal">Hi {{username}}!</h1>
+        <p class="lead font-weight-normal">"Photography is a way of feeling, of touching, of loving"</p>
+        <a class="btn btn-outline-secondary" [routerLink]="['/portfolio']" routerLinkActive="active">Add pictures to your portfolio</a>
+      </ng-container>
+    </div>
   </div>
+
+  <div class="search-results row">
+     <div class="col-sm-3 hero-item portfolio-item item set-bg" *ngFor = 'let picture of array'
+
+         [ngStyle]="{'background-image':' url('+ picture.getPath() +')'}">
+
+       <!-- plan a : model -->
+      <!--<a  class="hero-link" (click)="openDialog(picture)">
+        <div class="hero-link-inside">
+          <h2>Take a look at my Portfolio</h2>
+          <p>{{picture.getAuthor()}}</p>
+        </div>
+      </a>-->
+       <!-- plan B : to profile -->
+       <a  class="hero-link" [routerLink]="['/profil/'+picture.getAuthor()]" routerLinkActive="active">
+         <div class="hero-link-inside">
+           <h2>Take a look at my Portfolio</h2>
+           <p>{{picture.getAuthor()}}</p>
+         </div>
+     </a>
+
+    </div>
+  </div>
+
 </div>

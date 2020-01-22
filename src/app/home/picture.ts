@@ -42,5 +42,9 @@ export class Picture {
     return this.author;
   }
 
+  getTitle(): string {
+    return this.title;
+  }
+
 }
 
